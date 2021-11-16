@@ -1,0 +1,14 @@
+body { 
+  background: linear-gradient(to left, #3f87a6, #ebf8e1);  
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+} 
+
+.temp { 
+  font-size: 4.5rem; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}

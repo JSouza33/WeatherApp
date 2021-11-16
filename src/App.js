@@ -29,9 +29,9 @@ function App() {
 
   return ( 
     <div className="App">
+      <div className='temp'>{temp}</div> 
       <LocationInput setCityName={handleCityNameChange}/>
-      <div>{temp}</div> 
-      <div>{cityName}</div>
+      
     </div>
   );
 }
