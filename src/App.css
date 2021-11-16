@@ -1,14 +1,25 @@
 body { 
   background: linear-gradient(to left, #3f87a6, #ebf8e1);  
   display: flex; 
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content:center;
   height: 100vh;
 } 
 
-.temp { 
-  font-size: 4.5rem; 
+.temp_wrapper {  
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  margin: 50px;
+} 
+
+.temp_wrapper div { 
   display: flex; 
   align-items: center;
   justify-content: center;
+  color: rgba(0,0,0,.5);
+  background-color: rgba(244,244,244,.0); 
+  width: 150px;
+  height: 150px; 
+  font-size: 4.5rem;
 }

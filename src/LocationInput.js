@@ -12,7 +12,9 @@ export default function LocationInput(props) {
   return (
     <div> 
       <form onSubmit={submitFormHandler}> 
-        <input onChange={(event) => setInput(event.target.value)}></input>
+        <input onChange={(event) => setInput(event.target.value)}  
+               placeholder='City'
+        ></input>
       </form>
     </div>
   )

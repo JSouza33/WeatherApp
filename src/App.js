@@ -13,10 +13,11 @@ function App() {
         const response = await fetch(url) 
         const data = await response.json() 
         setCityName(cityName)
-        setTemp(parseInt(data.main.temp.toString() + '°'))
+        setTemp(parseInt(data.main.temp).toString() + '°')
         
       }catch(err){ 
         setCityName(null)
+        setTemp(null)
       }
     }
     fetchApi()
@@ -29,9 +30,10 @@ function App() {
 
   return ( 
     <div className="App">
-      <div className='temp'>{temp}</div> 
+      <div className='temp_wrapper'> 
+        <div>{temp}</div>
+      </div> 
       <LocationInput setCityName={handleCityNameChange}/>
-      
     </div>
   );
 }
