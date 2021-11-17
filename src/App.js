@@ -20,8 +20,8 @@ function App() {
         const data = await response.json() 
         setCityName(cityName)
         setTemp(parseInt(data.main.temp).toString() + '°')
-        setWind(data.wind.speed)
-        setHumidity(data.main.humidity) 
+        setWind(parseInt(data.wind.speed).toString() + 'mph')
+        setHumidity(parseInt(data.main.humidity).toString() + '%') 
         setSkyCondition(data.weather[0].description)
       }catch(err){ 
         setCityName(null)
@@ -45,10 +45,11 @@ function App() {
         <div>{temp}</div>
       </div>  
 
-      <div className='other-data'> 
-        <div className='wind'>{wind}</div> 
-        <div className='humidity'>{humidity}</div> 
+      <div className='other-data'>  
+        <div className='city-name'>{cityName}</div>
         <div className='sky-condition'>{skyCondition}</div>
+        <div className='wind'>{wind}</div> 
+        <div className='humidity'>{humidity}</div>
       </div>
       <LocationInput setCityName={handleCityNameChange}/>
     </div>

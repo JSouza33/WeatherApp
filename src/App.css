@@ -10,7 +10,7 @@ body {
   display: flex; 
   align-items: center;
   justify-content: center; 
-  margin: 50px;
+  margin-top: 50px;
 } 
 
 .temp-wrapper div { 
@@ -23,3 +23,18 @@ body {
   height: 150px; 
   font-size: 4.5rem;
 }
+ 
+.other-data { 
+  margin-bottom: 50px; 
+  color: white; 
+  font-size: 1.2rem; 
+  width: 200px; 
+  height: 100px;
+  padding: 5px;
+} 
+
+.other-data .city-name { 
+  text-decoration: underline; 
+  color: rgba(0,0,0,.5); 
+  font-size: 1.5rem;
+} 
