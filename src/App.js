@@ -5,6 +5,12 @@ import LocationInput from './LocationInput';
 function App() {  
   const [temp, setTemp] = useState(null)
   const [cityName, setCityName] = useState('') // example cityName
+  const [wind, setWind] = useState(null) 
+  const [humidity, setHumidity] = useState(null) 
+  const [skyCondition, setSkyCondition] = useState(null)
+
+
+
 
   useEffect(() => { 
     const fetchApi = async() => {  
@@ -14,10 +20,15 @@ function App() {
         const data = await response.json() 
         setCityName(cityName)
         setTemp(parseInt(data.main.temp).toString() + '°')
-        
+        setWind(data.wind.speed)
+        setHumidity(data.main.humidity) 
+        setSkyCondition(data.weather[0].description)
       }catch(err){ 
         setCityName(null)
-        setTemp(null)
+        setTemp(null) 
+        setWind(null)
+        setHumidity(null)
+        setSkyCondition(null)
       }
     }
     fetchApi()
@@ -30,9 +41,15 @@ function App() {
 
   return ( 
     <div className="App">
-      <div className='temp_wrapper'> 
+      <div className='temp-wrapper'> 
         <div>{temp}</div>
-      </div> 
+      </div>  
+
+      <div className='other-data'> 
+        <div className='wind'>{wind}</div> 
+        <div className='humidity'>{humidity}</div> 
+        <div className='sky-condition'>{skyCondition}</div>
+      </div>
       <LocationInput setCityName={handleCityNameChange}/>
     </div>
   );
