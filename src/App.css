@@ -25,16 +25,19 @@ body {
 }
  
 .other-data { 
-  margin-bottom: 50px; 
+  margin-bottom: 70px; 
   color: white; 
   font-size: 1.2rem; 
   width: 200px; 
   height: 100px;
-  padding: 5px;
 } 
 
 .other-data .city-name { 
   text-decoration: underline; 
   color: rgba(0,0,0,.5); 
   font-size: 1.5rem;
-} 
+}  
+
+.other-data * { 
+  margin: 10px;
+}
