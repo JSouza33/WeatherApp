@@ -8,11 +8,12 @@ function App() {
   const [wind, setWind] = useState(null) 
   const [humidity, setHumidity] = useState(null) 
   const [skyCondition, setSkyCondition] = useState(null)
-
+  
   useEffect(() => { 
-    const fetchApi = async() => {  
+    const fetchApi = async() => { 
       try{ 
-        const apiKey = '718052da6257f6f873a9489a0b38e691'
+        const apiKey = process.env.REACT_APP_API_Key 
+        console.log(process)
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`            
         const response = await fetch(url) 
         const data = await response.json() 
